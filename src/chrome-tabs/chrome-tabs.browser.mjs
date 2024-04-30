@@ -51,11 +51,6 @@ const calculateNewIndex = (numberOfTabs, currentX, originX, width, currentIndex)
   return Math.min(numberOfTabs + 1, Math.max(0, currentIndex + offsetIdx));
 };
 
-const tabStyle = (width, idx, offsetX) =>
-  `width: ${width + (2 * TAB_CONTENT_MARGIN) + TAB_CONTENT_OVERLAP_DISTANCE}px;` +
-  `transform: translate3d(${(width) * idx}px, 0, 0);` +
-  `left: ${offsetX}px`;
-
 const isInVisibleArea = event =>
   event.clientX > 0 && event.clientY > 0 &&
   event.clientX <= window.innerWidth && event.clientY <= window.innerHeight;
@@ -127,7 +122,6 @@ const Tab = ({dispatch, numberOfTabs, idx, id, active, offsetX = 0, title, url, 
     },
     onDrag: tabDrag,
     onDragEnd: tabDrag,
-    style: tabStyle(width, idx, offsetX),
     onClick: tabClick
   };
   if (active === true) {
@@ -135,15 +129,8 @@ const Tab = ({dispatch, numberOfTabs, idx, id, active, offsetX = 0, title, url, 
   }
   return html`
     <div class="chrome-tab" ...${props}>
-      <div class="chrome-tab-dividers"></div>
-      <div class="chrome-tab-background">
-        <${BackgroundSvg} />
-      </div>
       <div class="chrome-tab-content">
         <${Favicon} ...${rest}/>
-        <div class="chrome-tab-title" title=${url}>
-          ${title ? title : url}
-        </div>
         <${NotificationIcon} ...${rest}/>
       </div>
     </div>

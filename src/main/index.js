@@ -61,8 +61,8 @@ const activateTab = ({tabId, restoreWindow = true}) => {
     const {width, height} = mainWindow.getContentBounds();
     resetMainWindow();
     mainWindow.addBrowserView(activeTab);
-    tabContainer.setBounds({x: 0, y: 0, width, height: TABS_CONTAINER_HEIGHT});
-    activeTab.setBounds({x: 0, y: TABS_CONTAINER_HEIGHT, width, height: height - TABS_CONTAINER_HEIGHT});
+    tabContainer.setBounds({x: 0, y: 0, width: TABS_CONTAINER_HEIGHT, height: height});
+    activeTab.setBounds({x: TABS_CONTAINER_HEIGHT, y: 0, width: width - TABS_CONTAINER_HEIGHT, height: height});
     tabManager.setActiveTab(tabId);
     if (restoreWindow) {
       activeTab.webContents.focus();
@@ -265,12 +265,7 @@ const init = () => {
     show: false, paintWhenInitiallyHidden: false,
     webPreferences
   });
-  if (startMinimized) {
-    mainWindow.showInactive();
-    mainWindow.minimize();
-  } else {
-    mainWindow.show();
-  }
+  mainWindow.show();
   mainWindow.removeMenu();
   ['resize', 'maximize', 'restore']
     .forEach(event => mainWindow.on(event, handleMainWindowResize));
