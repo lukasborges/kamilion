@@ -37,6 +37,7 @@ TRANSPARENT_GIF.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQA
 const TAB_CONTENT_MARGIN = 9;
 const TAB_CONTENT_OVERLAP_DISTANCE = 1;
 const TAB_CONTENT_MAX_WIDTH = 240;
+const TAB_CONTENT_MAX_HEIGHT = 48;
 
 const calculateTabWidth = numberOfTabs => {
   const availableWidth = (getChromeTabs() || getTabContainer()).clientWidth;
@@ -96,18 +97,18 @@ const Tab = ({dispatch, numberOfTabs, idx, id, active, offsetX = 0, title, url, 
     }
   };
   const [draggedId, setDraggedId] = useState(id);
-  const [originX, setOriginX] = useState(0);
+  const [originY, setOriginY] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(idx);
   const tabDrag = event => {
-    const newIdx = calculateNewIndex(numberOfTabs, event.clientX, originX, width, currentIndex);
-    let currentOffsetX = 0;
+    const newIdx = calculateNewIndex(numberOfTabs, event.clientY, originY, TAB_CONTENT_MAX_HEIGHT, currentIndex);
+    let currentOffsetY = 0;
     if (isInVisibleArea(event) && event.type === 'drag') {
-      currentOffsetX = (event.clientX - originX) + (width * (idx - newIdx));
+      currentOffsetY = (event.clientY - originY) + (TAB_CONTENT_MAX_HEIGHT * (idx - newIdx));
     }
     moveTab({dispatch})({
       id: draggedId,
       idx: isInVisibleArea(event) ? newIdx : idx,
-      offsetX: currentOffsetX
+      offsetY: currentOffsetY
     });
   };
   const props = {
@@ -115,8 +116,7 @@ const Tab = ({dispatch, numberOfTabs, idx, id, active, offsetX = 0, title, url, 
     draggable: true,
     onDragStart: event => {
       tabClick();
-      event.dataTransfer.setDragImage(TRANSPARENT_GIF, 0, 0);
-      setOriginX(event.clientX);
+      setOriginY(event.clientY);
       setDraggedId(id);
       setCurrentIndex(idx);
     },
