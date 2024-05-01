@@ -1,4 +1,3 @@
-# ElectronIM
 [![GitHub license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/manusa/electronim/blob/master/LICENSE)
 [<img src="https://github.com/manusa/electronim/workflows/Tests/badge.svg" />](https://github.com/manusa/electronim/actions)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=manusa_electronim&metric=bugs)](https://sonarcloud.io/dashboard?id=manusa_electronim) 
@@ -9,7 +8,10 @@
 [![Chocolatey Version](https://img.shields.io/chocolatey/v/electronim)](https://community.chocolatey.org/packages/electronim)
 
 
-Free/Libre open source Electron based multi instant messaging (IM) client.
+# Kamilion
+
+Fork of ElectronIM with new user interface, inspired by Franz. Free/Libre open source Electron based multi instant
+messaging (IM) client.
 
 Combine all your IM applications (or whatever you want) in a single browser (Electron) window.
 
@@ -18,18 +20,8 @@ Combine all your IM applications (or whatever you want) in a single browser (Ele
 Detailed guides for installation can be followed in our comprehensive [setup guide](docs/Setup.md).
 
 Download the latest binary version for your platform:
-[releases](https://github.com/manusa/electronim/releases/latest)
+[releases](https://github.com/lukasborges/electronim/releases/latest)
 
-Or if you have Node installed in your system, you can try out ElectronIM by running one of the following commands:
-
-```
-npx electronim
-```
-
-```
-npm install -g electronim
-electronim
-```
 
 ## Features
 
@@ -56,8 +48,8 @@ electronim
 ## Motivation
 
 Inspired by [Rambox](https://github.com/ramboxapp/community-edition) and
-[Franz](https://github.com/meetfranz/franz), I created **ElectronIM** out of the necessity of
-having an all-in-one instant messaging app that didn't require registration and provided 
+[Franz](https://github.com/meetfranz/franz), I created **Kamilion** out of the necessity of
+having an all-in-one instant messaging app that didn't require registration and provided
 spell checking for free.
 
 

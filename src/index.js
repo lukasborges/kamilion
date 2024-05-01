@@ -17,7 +17,7 @@ const {app} = require('electron');
 const {registerAppShortcuts} = require('./browser-window');
 const {init, quit} = require('./main');
 
-app.name = 'ElectronIM';
+app.name = 'Kamilion';
 
 app.on('ready', init);
 app.on('quit', quit);
