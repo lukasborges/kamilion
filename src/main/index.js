@@ -20,7 +20,7 @@ const {
 const {APP_EVENTS, CLOSE_BUTTON_BEHAVIORS} = require('../constants');
 const {openAboutDialog} = require('../about');
 const {newAppMenu, isNotAppMenu} = require('../app-menu');
-const {TABS_CONTAINER_HEIGHT, newTabContainer, isNotTabContainer} = require('../chrome-tabs');
+const {TABS_CONTAINER_WIDTH, newTabContainer, isNotTabContainer} = require('../chrome-tabs');
 const {openHelpDialog} = require('../help');
 const {getPlatform, loadSettings, updateSettings, openSettingsDialog} = require('../settings');
 const {
@@ -61,8 +61,8 @@ const activateTab = ({tabId, restoreWindow = true}) => {
     const {width, height} = mainWindow.getContentBounds();
     resetMainWindow();
     mainWindow.addBrowserView(activeTab);
-    tabContainer.setBounds({x: 0, y: 0, width: TABS_CONTAINER_HEIGHT, height: height});
-    activeTab.setBounds({x: TABS_CONTAINER_HEIGHT, y: 0, width: width - TABS_CONTAINER_HEIGHT, height: height});
+    tabContainer.setBounds({x: 0, y: 0, width: TABS_CONTAINER_WIDTH, height});
+    activeTab.setBounds({x: TABS_CONTAINER_WIDTH, y: 0, width: width - TABS_CONTAINER_WIDTH, height});
     tabManager.setActiveTab(tabId);
     if (restoreWindow) {
       activeTab.webContents.focus();
@@ -257,7 +257,7 @@ const browserVersionsReady = () => {
 const init = () => {
   fixUserDataLocation();
   loadDictionaries();
-  const {width = 800, height = 600, startMinimized, theme} = loadSettings();
+  const {width = 800, height = 600, theme} = loadSettings();
   nativeTheme.themeSource = theme;
   mainWindow = new BrowserWindow({
     width, height, resizable: true, maximizable: true,

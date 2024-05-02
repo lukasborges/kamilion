@@ -56,3 +56,4 @@ Icon.settings = '\ue8b8';
 Icon.spellcheck = '\ue8ce';
 Icon.visibility = '\ue8f4';
 Icon.visibilityOff = '\ue8f5';
+Icon.menu = '\ue5d2'

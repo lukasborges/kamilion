@@ -18,7 +18,7 @@ const path = require('path');
 const {APP_EVENTS} = require('../constants');
 const {getLatestRelease} = require('./check-for-updates');
 
-const TABS_CONTAINER_HEIGHT = 50;
+const TABS_CONTAINER_WIDTH = 50;
 
 const webPreferences = {
   contextIsolation: false,
@@ -74,5 +74,5 @@ const newTabContainer = () => {
 const isNotTabContainer = bv => bv.isTabContainer !== true;
 
 module.exports = {
-  TABS_CONTAINER_HEIGHT, newTabContainer, isNotTabContainer
+  TABS_CONTAINER_WIDTH: TABS_CONTAINER_WIDTH, newTabContainer, isNotTabContainer
 };

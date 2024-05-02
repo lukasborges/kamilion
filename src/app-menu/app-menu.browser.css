@@ -44,12 +44,13 @@ html.electronim,
 
 }
 .electronim .app-menu .scrim {
-  top: var(--tab-container-height);
+  left: var(--tab-container-width);
   background: var(--scrim-color);
 }
 .electronim .app-menu .menu {
   position: absolute;
-  left: auto;
-  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 0;
   user-select: none;
 }

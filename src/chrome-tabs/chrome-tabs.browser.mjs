@@ -158,12 +158,11 @@ const ChromeTabs = ({dispatch, state: {tabs}}) => {
   `;
 };
 
-const Menu = ({state: {newVersionAvailable}}) => {
-  const icon = newVersionAvailable ? Icon.arrowCircleUp : Icon.moreVert;
+const Menu = () => {
+  const icon = Icon.menu;
   return html`
     <${IconButton}
       icon=${icon} className='menu__button' onClick=${openMenu}
-      title=${newVersionAvailable ? 'New ElectronIM version is available' : ''}
     />
   `;
 };
