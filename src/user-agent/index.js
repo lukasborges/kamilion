@@ -62,7 +62,7 @@ const replaceChromeVersion = userAgent => (BROWSER_VERSIONS.chromium ?
   : userAgent);
 
 const sanitizeUserAgent = userAgent => userAgent
-  .replace(/ElectronIM\/.*? /g, '')
+  .replace(/Kamilion\/.*? /g, '')
   .replace(/Electron\/.*? /g, '');
 
 const defaultUserAgent = userAgent => sanitizeUserAgent(replaceChromeVersion(userAgent));

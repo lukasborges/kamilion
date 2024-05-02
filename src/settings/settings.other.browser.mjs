@@ -30,17 +30,6 @@ export const OtherPane = ({dispatch, state}) => {
   return isPaneActive(state)(OtherPane.id) && html`
     <h2 class='title'>Other</h2>
     <${Card} className='settings__other'>
-      <${SettingsRow}>
-        <${Select}
-          data-testid='settings-theme-select'
-          label='Theme' value=${theme(state)} onChange=${setTheme}
-        >
-          <${Select.Option} value='system'>system</${Select.Option}>
-          <${Select.Option} value='light'>light</${Select.Option}>
-          <${Select.Option} value='dark'>dark</${Select.Option}>
-        </${Select}>
-      </${SettingsRow}>
-      <${Card.Divider} />
       <${SettingsOption}
           className='settings__global-notifications'
           label='Disable notifications globally'

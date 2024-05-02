@@ -146,7 +146,7 @@ const ChromeTabs = ({dispatch, state: {tabs}}) => {
   });
   return html`
     <div
-      class=${`chrome-tabs ${shouldUseDarkColors() ? 'chrome-tabs-dark-theme' : ''}`}
+      class="chrome-tabs chrome-tabs-dark-theme"
       style=${`--tab-content-margin: ${TAB_CONTENT_MARGIN}px`}
       ondragover=${event => event.preventDefault()}
     >
