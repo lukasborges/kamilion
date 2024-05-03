@@ -46,24 +46,30 @@ body {
 .tab-container .chrome-tabs {
   flex: 1;
   background: #EEE;
-  padding: 10px 0;
   height: max-content;
   padding: 0;
-  
 }
 
 .tab-container .chrome-tabs .chrome-tab {
   position: relative;
   left: unset;
   right: unset;
-  height: 48px;
-  width: 48px;
   border: solid 1px #4b4b4b;
   border-radius: 15%;
+  background-color: #202124;
+  height: 48px;
+  width: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #202124;
+}
+
+.tab-container .chrome-tabs .chrome-tab .chrome-tab-content {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tab-container .chrome-tabs .chrome-tab:not([active]) {
@@ -75,17 +81,13 @@ body {
   right: unset;
   top: unset;
   bottom: unset;
-  left: unset;
-  right: unset;
   padding: unset;
 }
 
 
 .tab-container .chrome-tabs .chrome-tab .chrome-tab-content .chrome-tab-favicon {
-  background-repeat: no-repeat;
-  background-size: 32px;
-  height: 32px;
-  width: 32px;
+  height: 16px;
+  width: 16px;
   margin: unset;
   display: flex;
 }
