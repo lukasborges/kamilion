@@ -39,7 +39,7 @@ const Toc = () => html`
 
 const Footer = () => html`
   <div class="documents-footer">
-      ElectronIM version ${ELECTRONIM_VERSION}
+      Kamilion version ${ELECTRONIM_VERSION}
   </div>
 `;
 

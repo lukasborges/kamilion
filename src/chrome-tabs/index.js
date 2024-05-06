@@ -18,7 +18,7 @@ const path = require('path');
 const {APP_EVENTS} = require('../constants');
 const {getLatestRelease} = require('./check-for-updates');
 
-const TABS_CONTAINER_WIDTH = 50;
+const TABS_CONTAINER_WIDTH = 44;
 
 const webPreferences = {
   contextIsolation: false,
